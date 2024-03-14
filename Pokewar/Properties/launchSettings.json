@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Pokewar (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Pokewar (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

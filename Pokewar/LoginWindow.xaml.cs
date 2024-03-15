@@ -27,6 +27,7 @@ namespace Pokewar
 	/// </summary>
 	public sealed partial class LoginWindow : Window
 	{
+		private int user_id;
 		public LoginWindow()
 		{
 			this.InitializeComponent();
@@ -53,8 +54,11 @@ namespace Pokewar
 					// Compare the hashed password with the one stored in the database
 					if (AppDbContext.VerifyPassword(password,user.Password))
 					{
-						//show something to the user
-						var dialog = new MessageDialog("Login successful!");
+						user_id = user.Id;
+						var active_window = new PokemonTeamSelection(user_id);
+						active_window.Activate();
+						this.Close();
+						
 
 					}
 					else
